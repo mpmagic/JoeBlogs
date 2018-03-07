@@ -19,7 +19,7 @@ namespace JoeBlogs
         public string description;
         public string mt_excerpt;
         public string mt_text_more;
-        public string mt_allow_comments;
+        public int mt_allow_comments;
         public int mt_allow_pings;
         public DateTime dateCreated;
 
