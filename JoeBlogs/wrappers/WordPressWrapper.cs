@@ -297,7 +297,11 @@ namespace JoeBlogs
 
         public virtual bool EditPost(int postID, Post content, bool publish)
         {
-            return _wrapper.EditPost(postID, Username, Password, Map.From.Post(content), publish);
+          // The parameters are wrong... or have changed since Wordpress 3.4.
+          // See here for info: https://codex.wordpress.org/XML-RPC_WordPress_API/Posts
+          // The blogId is unused: we pass 0
+          //return _wrapper.EditPost(postID, Username, Password, Map.From.Post(content), publish);
+          return _wrapper.EditPost(0, Username, Password, postID, Map.From.Post(content));
         }
 
         /// <summary>
