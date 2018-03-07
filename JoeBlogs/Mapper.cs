@@ -32,13 +32,13 @@ namespace JoeBlogs
             {
                 return new XmlRpcCategory
                 {
-                    categoryId = Convert.ToString(input.CategoryID),
+                    categoryId = Convert.ToInt32(input.CategoryID),
                     categoryName = input.Name,
                     htmlUrl = input.HtmlUrl,
                     rssUrl = input.RSSUrl,
                     title = input.Name,
-                    description = input.Description,
-                    parentId = Convert.ToString(input.ParentCategoryID),
+                    categoryDescription = input.Description,
+                    parentId = Convert.ToInt32(input.ParentCategoryID),
                 };
             }
 
@@ -137,7 +137,7 @@ namespace JoeBlogs
                            {
                                dateCreated = input.DateCreated,
                                description = input.Body,
-                               mt_allow_comments = input.AllowComments ? 1 : 0,
+                               mt_allow_comments = input.AllowComments ? "open" : "closed",
                                mt_allow_pings = input.AllowPings ? 1 : 0,
                                mt_excerpt = input.Excerpt,
                                mt_text_more = input.mt_text_more,
@@ -179,7 +179,7 @@ namespace JoeBlogs
                            {
                                count = input.Count,
                                html_url = input.HTMLUrl,
-                               tag_id = input.ID,
+                               tag_id = Convert.ToInt32(input.ID),
                                name = input.Name,
                                rss_url = input.RSSUrl,
                                slug = input.Slug
@@ -215,7 +215,11 @@ namespace JoeBlogs
                     postid = input.PostID,
                     title = input.Title,
                     permaLink = input.Permalink,
+                    wp_slug = input.Slug,
                     post_type = input.PostType,
+                    post_thumbnail = input.PostThumbnail, // MP - not sure if we need this
+                    wp_post_thumbnail = input.PostThumbnail, // MP - this is specifically for Wordpress
+                    mt_allow_comments = input.CommentsEnabled ? "open" : "closed",
                     custom_fields = input.CustomFields == null ? null : input.CustomFields.Select(cf => new XmlRpcCustomField()
                     {
                         id = cf.ID,
@@ -326,8 +330,8 @@ namespace JoeBlogs
             {
                 var result = new Page
                                  {
-                                     AllowComments = (input.mt_allow_comments == 1),
-                                     AllowPings = (input.mt_allow_comments == 1),
+                                     AllowComments = (input.mt_allow_comments == "open"),
+                                     AllowPings = (input.mt_allow_comments == "open"),
                                      AuthorID = Convert.ToInt32(input.wp_author_id),
                                      Body = input.description,
                                      DateCreated = input.dateCreated,
@@ -351,7 +355,7 @@ namespace JoeBlogs
                                  {
                                      ParentCategoryID = Convert.ToInt32(input.parentId),
                                      Name = input.categoryName,
-                                     Description = input.description,
+                                     Description = input.categoryDescription,
                                      HtmlUrl = input.htmlUrl,
                                      RSSUrl = input.rssUrl,
                                  };
@@ -399,9 +403,10 @@ namespace JoeBlogs
 
             internal static MediaObjectInfo MediaObjectInfo(XmlRpcMediaObjectInfo input)
             {
-                return new MediaObjectInfo
+              return new MediaObjectInfo
                 {
-                    URL = input.url
+                  URL = input.url,
+                  ID = input.id // MP - this is returned by Wordpress. Should check as it can be "attachment_id"
                 };
             }
 
