@@ -12,7 +12,7 @@ namespace JoeBlogs
         /// <summary>
         /// The id.
         /// </summary>
-        public string tag_id;
+        public int tag_id;
 
         /// <summary>
         /// The name. This is also usually the textual representation of the tag.

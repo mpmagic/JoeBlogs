@@ -22,7 +22,7 @@ namespace JoeBlogs
         public string mt_excerpt;
         public string mt_text_more;
         public string wp_more_text;
-        public int mt_allow_comments;
+        public string mt_allow_comments;
         public int mt_allow_pings;
         public string mt_keywords;
         public string wp_slug;
@@ -31,8 +31,10 @@ namespace JoeBlogs
         public string wp_author_display_name;
         public string post_status;
         public string post_type;
+        public string wp_post_thumbnail; // MP - the Id of the featured image/post thumbnail (Wordpress)
+        public string post_thumbnail; // MP - the Id of the featured image/post thumbnail
 
-        public XmlRpcCustomField[] custom_fields;
+    public XmlRpcCustomField[] custom_fields;
         public XmlRpcTerm[] terms;
 
         public override string ToString()

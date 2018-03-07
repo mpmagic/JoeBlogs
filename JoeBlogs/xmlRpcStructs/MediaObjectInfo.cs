@@ -13,5 +13,6 @@ namespace JoeBlogs
 		/// The URL to the media object.
 		/// </summary>
 		public string url;
-	}
+    public string id; // MP - we need id from Wordpress for Featured Image
+  }
 }

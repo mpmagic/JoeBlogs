@@ -10,9 +10,9 @@ namespace JoeBlogs
     [XmlRpcMissingMapping(MappingAction.Ignore)]
     public struct XmlRpcCategory
     {
-        public string categoryId;
-        public string parentId;
-        public string description;
+        public int categoryId;
+        public int parentId;
+        public string categoryDescription;
         public string categoryName;
         public string title;
         public string htmlUrl;
