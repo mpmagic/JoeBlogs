@@ -9,7 +9,7 @@ namespace JoeBlogs
         /// <summary>
         /// The id.
         /// </summary>
-        public string ID { get; set; }
+        public int/*string*/ ID { get; set; }
 
         /// <summary>
         /// The name. This is also usually the textual representation of the tag.
