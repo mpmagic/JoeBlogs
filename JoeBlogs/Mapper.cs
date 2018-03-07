@@ -137,7 +137,7 @@ namespace JoeBlogs
                            {
                                dateCreated = input.DateCreated,
                                description = input.Body,
-                               mt_allow_comments = input.AllowComments ? "open" : "closed",
+                               mt_allow_comments = input.AllowComments ? 1 : 0,
                                mt_allow_pings = input.AllowPings ? 1 : 0,
                                mt_excerpt = input.Excerpt,
                                mt_text_more = input.mt_text_more,
@@ -219,7 +219,7 @@ namespace JoeBlogs
                     post_type = input.PostType,
                     post_thumbnail = input.PostThumbnail, // MP - not sure if we need this
                     wp_post_thumbnail = input.PostThumbnail, // MP - this is specifically for Wordpress
-                    mt_allow_comments = input.CommentsEnabled ? "open" : "closed",
+                    mt_allow_comments = input.CommentsEnabled ? 1 : 0,
                     custom_fields = input.CustomFields == null ? null : input.CustomFields.Select(cf => new XmlRpcCustomField()
                     {
                         id = cf.ID,
@@ -304,7 +304,7 @@ namespace JoeBlogs
             {
                 return new Post
                 {
-                    PostID = Convert.ToInt32(input.postid),
+                    PostID = input.postid,
                     Body = input.description,
                     Categories = input.categories,
                     DateCreated = input.dateCreated,
@@ -330,8 +330,8 @@ namespace JoeBlogs
             {
                 var result = new Page
                                  {
-                                     AllowComments = (input.mt_allow_comments == "open"),
-                                     AllowPings = (input.mt_allow_comments == "open"),
+                                     AllowComments = (input.mt_allow_comments == 1),
+                                     AllowPings = (input.mt_allow_comments == 1),
                                      AuthorID = Convert.ToInt32(input.wp_author_id),
                                      Body = input.description,
                                      DateCreated = input.dateCreated,
