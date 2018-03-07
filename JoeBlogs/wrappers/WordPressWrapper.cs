@@ -448,11 +448,20 @@ namespace JoeBlogs
 
             return result;
         }
+    /// <summary>
+    /// Allows to receive strings as integer from Wordpress/Joomla.
+    /// No longer used
+    /// </summary>
+    /// <param name="bAllow">True, if we can receive strings when expecting ints</param>
+    public void AllowStringAsInt(bool bAllow)
+    {
+      return; // No longer used, as this version of JoeBlogs is compatible with Wordpress 4 and has ints in place of strings
+    }
 
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources
         /// </summary>
-        public override void Dispose()
+    public override void Dispose()
         {
             _wrapper = null;
         }
