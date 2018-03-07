@@ -3,3 +3,6 @@ as wp_post_thumbnail, which allows Wordpress to associate a "featured image" to 
 The changes involve the return of the image id when uploaded, in addition to the URL from the master,
 and the addition of member PostThumbnail to class Post. The PostThumbnail is a string that contains
 the Wordpress ID of the image.
+
+Fixed the wrapper for wp.editPost, as the parameters have changed (?) since the original implementation
+See here for info: https://codex.wordpress.org/XML-RPC_WordPress_API/Posts
