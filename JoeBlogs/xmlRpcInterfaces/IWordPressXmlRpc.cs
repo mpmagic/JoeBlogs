@@ -84,9 +84,10 @@ namespace JoeBlogs.XmlRpcInterfaces
         bool EditPage(int blogId, int page_id, string username, string password, XmlRpcPage content, bool publish);
 
         [XmlRpcMethod("wp.editPost")]
-        bool EditPost(int postid, string username, string password, XmlRpcPost content, bool publish);
+    //bool EditPost(int postid, string username, string password, XmlRpcPost content, bool publish);
+    bool EditPost(int blogid, string username, string password, int postid, XmlRpcPost content);
 
-        [XmlRpcMethod("wp.getAuthors")]
+    [XmlRpcMethod("wp.getAuthors")]
         XmlRpcAuthor[] GetAuthors(int blogId, string username, string password);
 
         [XmlRpcMethod("wp.getCategories")]
