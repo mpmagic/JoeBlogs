@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JoeBlogs">
-      <HintPath>..\bin\JoeBlogs.dll</HintPath>
+      <HintPath>..\JoeBlogs\obj\Release\JoeBlogs.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Nancy">

@@ -2,6 +2,7 @@ using System;
 using NUnit.Framework;
 using Nancy;
 using Nancy.Hosting.Self;
+using JoeBlogs;
 
 namespace JoeBlogs.IntegrationTests
 {
