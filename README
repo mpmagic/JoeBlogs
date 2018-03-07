@@ -1,0 +1,5 @@
+This fork contains the implementation of the XML-RPC "post_thumbnail" attribute on post editing,
+as wp_post_thumbnail, which allows Wordpress to associate a "featured image" to the post.
+The changes involve the return of the image id when uploaded, in addition to the URL from the master,
+and the addition of member PostThumbnail to class Post. The PostThumbnail is a string that contains
+the Wordpress ID of the image.
