@@ -9,8 +9,9 @@ namespace JoeBlogs
     [XmlRpcMissingMapping(MappingAction.Ignore)]
     public struct XmlRpcComment
     {
-        public DateTime dateCreated;
-        public string user_id;
+    //public DateTime dateCreated;
+      public DateTime date_created_gmt;
+      public string user_id;
         public string comment_id;
         public string parent;
         public string status;
