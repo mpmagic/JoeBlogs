@@ -53,7 +53,8 @@ namespace JoeBlogs
                                     parent = Convert.ToString(input.ParentCommentID),
                                     content = input.Content,
                                     comment_id = Convert.ToString(input.CommentID),
-                                    dateCreated = input.DateCreated,
+                  //dateCreated = input.DateCreated,
+                                    date_created_gmt = input.DateCreated,
                                     link = input.Link,
                                     post_id = Convert.ToString(input.PostID),
                                     post_title = input.PostTitle
@@ -264,7 +265,7 @@ namespace JoeBlogs
                 result.AuthorUrl = input.author_url;
                 result.CommentID = Convert.ToInt16(input.comment_id);
                 result.Content = input.content;
-                result.DateCreated = input.dateCreated;
+                result.DateCreated =  input.date_created_gmt; //input.dateCreated;
                 result.Link = input.link;
                 result.PostID = Convert.ToInt16(input.post_id);
                 result.PostTitle = input.post_title;
