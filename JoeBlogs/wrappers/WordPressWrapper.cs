@@ -180,8 +180,9 @@ namespace JoeBlogs
                 author = author,
                 author_email = author_email,
                 author_url = author_url,
-                dateCreated = date_created_gmt,
-                content = content,
+              //dateCreated = date_created_gmt,
+              date_created_gmt = date_created_gmt,
+              content = content,
                 status = EnumsHelper.GetCommentStatusName(status)
             };
 
