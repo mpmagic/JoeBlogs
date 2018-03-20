@@ -33,6 +33,7 @@ namespace JoeBlogs
         public string post_type;
         public string wp_post_thumbnail; // MP - the Id of the featured image/post thumbnail (Wordpress)
         public string post_thumbnail; // MP - the Id of the featured image/post thumbnail
+        public string post_content; // MP - the body of the post (WordPress)
 
     public XmlRpcCustomField[] custom_fields;
         public XmlRpcTerm[] terms;
