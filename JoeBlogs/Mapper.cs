@@ -220,6 +220,7 @@ namespace JoeBlogs
                     post_type = input.PostType,
                     post_thumbnail = input.PostThumbnail, // MP - not sure if we need this
                     wp_post_thumbnail = input.PostThumbnail, // MP - this is specifically for Wordpress
+                    post_content = input.Body, // MP - allows editing of content
                     mt_allow_comments = input.CommentsEnabled ? 1 : 0,
                     custom_fields = input.CustomFields == null ? null : input.CustomFields.Select(cf => new XmlRpcCustomField()
                     {
